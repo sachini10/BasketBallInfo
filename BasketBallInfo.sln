@@ -19,6 +19,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasketBallInfo.Context", "B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasketBallInfo.Infrastructure.Integrations", "BasketBallInfo.Infrastructure.Integrations\BasketBallInfo.Infrastructure.Integrations.csproj", "{022FC977-A45B-43E1-91E4-B72956FF7032}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9BB054A7-D655-4770-9B5D-AFDC902638D6}"
+	ProjectSection(SolutionItems) = preProject
+		SqlQuery_1.sql = SqlQuery_1.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +56,7 @@ Global
 		{25283E09-A988-45F8-8955-5F701D5E7CC6} = {69999E33-4A2F-4567-90D1-4310C4AFD774}
 		{8E7E39E8-41C8-4C39-94B2-EADC7A856F2E} = {C2C8B2E8-F3DB-4836-B7DE-0A5AFA7923F3}
 		{022FC977-A45B-43E1-91E4-B72956FF7032} = {25283E09-A988-45F8-8955-5F701D5E7CC6}
+		{9BB054A7-D655-4770-9B5D-AFDC902638D6} = {C2C8B2E8-F3DB-4836-B7DE-0A5AFA7923F3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {54CC9603-3340-49CD-94C7-224EE0BABC40}
