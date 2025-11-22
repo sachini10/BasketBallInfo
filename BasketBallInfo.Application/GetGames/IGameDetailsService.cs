@@ -2,5 +2,6 @@
 
 public interface IGameDetailsService
 {
-    public Task<List<GameDetailsResponse>> GetGameDetails();
+    Task<List<GameDetailsDto>> GetGameDetails();
+    Task<GameDetailsDto> GetGameDetailsById(int id, CancellationToken ct);
 }

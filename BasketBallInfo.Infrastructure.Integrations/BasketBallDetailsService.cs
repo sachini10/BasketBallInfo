@@ -12,9 +12,9 @@ namespace BasketBallInfo.Infrastructure.Integrations
         {
             _httpClient = httpClient;
         }
-        public async Task<List<GameDetailsResponse>> FetchGameDetailsAsync(CancellationToken ct = default)
+        public async Task<List<GameDetailsDto>> FetchGameDetailsAsync(CancellationToken ct = default)
         {
-            var gameDetailsList = new List<GameDetailsResponse>();
+            var gameDetailsList = new List<GameDetailsDto>();
             var request = new HttpRequestMessage(HttpMethod.Get, "https://v1.basketball.api-sports.io/games?date=2025-11-21");
             request.Headers.Add("x-rapidapi-host", "v1.basketball.api-sports.io");
             request.Headers.Add("x-rapidapi-key", "4c93ac4d8cca3b8a4c023bc02d79e08e");
@@ -31,7 +31,7 @@ namespace BasketBallInfo.Infrastructure.Integrations
 
             foreach (var item in apiResponse.Response)
             {
-                var gameDetails = new GameDetailsResponse(
+                var gameDetails = new GameDetailsDto(
                     item.Id,
                     item.Date,
                     item.Status.Long,

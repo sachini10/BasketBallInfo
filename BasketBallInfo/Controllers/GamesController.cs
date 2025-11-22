@@ -15,19 +15,19 @@ namespace BasketBallInfo.Controllers
         {
             _gameDetails = gameDetails ?? throw new ArgumentNullException(nameof(gameDetails));
         }
-        // GET: api/<GamesController>
+
         [HttpGet]
-        public async Task<IEnumerable<GameDetailsResponse>> Get()
+        public async Task<List<GameDetailsDto>> Get()
         {
            var gameDetails = await _gameDetails.GetGameDetails();
             return gameDetails;
         }
 
-        // GET api/<GamesController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<GameDetailsDto> Get(int id, CancellationToken ct)
         {
-            return "value";
+            var gameDetail = await _gameDetails.GetGameDetailsById(id, ct);
+            return gameDetail;
         }
     }
 }
