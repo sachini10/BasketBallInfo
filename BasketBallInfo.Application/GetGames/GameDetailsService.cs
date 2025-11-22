@@ -21,16 +21,14 @@ public class GameDetailsService : IGameDetailsService
         const string sql = @"
             SELECT GameId, Date, Status, CountryName, Team1Name, Team2Name
             FROM Games
-            WHERE date = @Date;
+            WHERE CAST(Date AS DATE) = @Date;
         ";
         var games = new List<GameDetailsDto>();
         using var connection = _factory.Create();
-        connection.Open();
-
         using var command = connection.CreateCommand();
         command.CommandText = sql;
         command.Parameters.AddWithValue("@Date", "2025-11-21");
-
+        await connection.OpenAsync();
         using var reader = await command.ExecuteReaderAsync();
         while (await reader.ReadAsync())
         {
@@ -89,8 +87,7 @@ public class GameDetailsService : IGameDetailsService
         await connection.OpenAsync(ct);
         using var reader = await command.ExecuteReaderAsync(ct);
 
-        if (!reader.Read())
-            throw new KeyNotFoundException("Employee not found");
+        if (!reader.Read()) return null;
 
         return new GameDetailsDto(
             reader.GetInt32(0),

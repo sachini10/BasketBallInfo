@@ -1,3 +1,4 @@
+using BasketBallInfo.Application.Exceptions;
 using BasketBallInfo.Application.GetGames;
 using BasketBallInfo.Application.ServiceContracts;
 using BasketBallInfo.Context;
@@ -15,6 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<SqlConnectionFactory>();
 builder.Services.AddTransient<IGameDetailsService, GameDetailsService>();
 builder.Services.AddHttpClient<IBasketBallDetailsService, BasketBallDetailsService>();
+builder.Services.Configure<SportsApiConfigs>(configurations.GetSection("SportsApiConfigs"));
 
 var app = builder.Build();
 
@@ -24,6 +26,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 
