@@ -1,11 +1,12 @@
 # BasketBallInfo
 
-**##features**
+## features
 - get the basketball-related game details
 - get the basketball-related game details by game ID
+- Consider that the third-party API only provides 100 requests per day
 
 
-**##Tech Stack**
+## Tech Stack
 - .NET 8 / ASP.NET Core Web API
 - Microsoft.Data.SqlClient used as a SQL server client provider
 - Microsoft.Extensions.Options used for configuration bindings
