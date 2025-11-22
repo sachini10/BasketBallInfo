@@ -1,5 +1,7 @@
 using BasketBallInfo.Application.GetGames;
+using BasketBallInfo.Application.ServiceContracts;
 using BasketBallInfo.Context;
+using BasketBallInfo.Infrastructure.Integrations;
 
 var builder = WebApplication.CreateBuilder(args);
 var configurations = builder.Configuration;
@@ -12,6 +14,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<SqlConnectionFactory>();
 builder.Services.AddTransient<IGameDetailsService, GameDetailsService>();
+builder.Services.AddHttpClient<IBasketBallDetailsService, BasketBallDetailsService>();
 
 var app = builder.Build();
 

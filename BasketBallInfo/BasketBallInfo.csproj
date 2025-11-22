@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BasketBallInfo.Application\BasketBallInfo.Application.csproj" />
     <ProjectReference Include="..\BasketBallInfo.Context\BasketBallInfo.Context.csproj" />
+    <ProjectReference Include="..\BasketBallInfo.Infrastructure.Integrations\BasketBallInfo.Infrastructure.Integrations.csproj" />
   </ItemGroup>
 
 </Project>
