@@ -5,6 +5,20 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasketBallInfo", "BasketBallInfo\BasketBallInfo.csproj", "{26EB24E2-9768-410F-9EFB-9C949E6262FD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{DDEE26FC-A1FC-4C57-AB02-B39C5E961446}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{69999E33-4A2F-4567-90D1-4310C4AFD774}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasketBallInfo.Application", "BasketBallInfo.Application\BasketBallInfo.Application.csproj", "{B1C132B9-A95E-4652-A4D7-F3E3EDCABA17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{C2C8B2E8-F3DB-4836-B7DE-0A5AFA7923F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integrations", "Integrations", "{25283E09-A988-45F8-8955-5F701D5E7CC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasketBallInfo.Context", "BasketBallInfo.Context\BasketBallInfo.Context.csproj", "{8E7E39E8-41C8-4C39-94B2-EADC7A856F2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasketBallInfo.Infrastructure.Integrations", "BasketBallInfo.Infrastructure.Integrations\BasketBallInfo.Infrastructure.Integrations.csproj", "{022FC977-A45B-43E1-91E4-B72956FF7032}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +29,28 @@ Global
 		{26EB24E2-9768-410F-9EFB-9C949E6262FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26EB24E2-9768-410F-9EFB-9C949E6262FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26EB24E2-9768-410F-9EFB-9C949E6262FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1C132B9-A95E-4652-A4D7-F3E3EDCABA17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1C132B9-A95E-4652-A4D7-F3E3EDCABA17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1C132B9-A95E-4652-A4D7-F3E3EDCABA17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1C132B9-A95E-4652-A4D7-F3E3EDCABA17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E7E39E8-41C8-4C39-94B2-EADC7A856F2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E7E39E8-41C8-4C39-94B2-EADC7A856F2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E7E39E8-41C8-4C39-94B2-EADC7A856F2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E7E39E8-41C8-4C39-94B2-EADC7A856F2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{022FC977-A45B-43E1-91E4-B72956FF7032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022FC977-A45B-43E1-91E4-B72956FF7032}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{022FC977-A45B-43E1-91E4-B72956FF7032}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022FC977-A45B-43E1-91E4-B72956FF7032}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B1C132B9-A95E-4652-A4D7-F3E3EDCABA17} = {DDEE26FC-A1FC-4C57-AB02-B39C5E961446}
+		{C2C8B2E8-F3DB-4836-B7DE-0A5AFA7923F3} = {69999E33-4A2F-4567-90D1-4310C4AFD774}
+		{25283E09-A988-45F8-8955-5F701D5E7CC6} = {69999E33-4A2F-4567-90D1-4310C4AFD774}
+		{8E7E39E8-41C8-4C39-94B2-EADC7A856F2E} = {C2C8B2E8-F3DB-4836-B7DE-0A5AFA7923F3}
+		{022FC977-A45B-43E1-91E4-B72956FF7032} = {25283E09-A988-45F8-8955-5F701D5E7CC6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {54CC9603-3340-49CD-94C7-224EE0BABC40}
