@@ -1,5 +1,6 @@
 ﻿using BasketBallInfo.Application.GetGames;
 using BasketBallInfo.Application.ServiceContracts;
+using Microsoft.Extensions.Options;
 using System.Text.Json;
 
 namespace BasketBallInfo.Infrastructure.Integrations
@@ -7,17 +8,19 @@ namespace BasketBallInfo.Infrastructure.Integrations
     public class BasketBallDetailsService : IBasketBallDetailsService
     {
         private readonly HttpClient _httpClient;
+        private readonly SportsApiConfigs _apiConfigs;
 
-        public BasketBallDetailsService(HttpClient httpClient)
+        public BasketBallDetailsService(HttpClient httpClient, IOptions<SportsApiConfigs> apiConfigs)
         {
             _httpClient = httpClient;
+            _apiConfigs = apiConfigs.Value;
         }
         public async Task<List<GameDetailsDto>> FetchGameDetailsAsync(CancellationToken ct = default)
         {
             var gameDetailsList = new List<GameDetailsDto>();
-            var request = new HttpRequestMessage(HttpMethod.Get, "https://v1.basketball.api-sports.io/games?date=2025-11-21");
-            request.Headers.Add("x-rapidapi-host", "v1.basketball.api-sports.io");
-            request.Headers.Add("x-rapidapi-key", "4c93ac4d8cca3b8a4c023bc02d79e08e");
+            var request = new HttpRequestMessage(HttpMethod.Get, _apiConfigs.BaseUrl);
+            request.Headers.Add("x-rapidapi-host", _apiConfigs.Host);
+            request.Headers.Add("x-rapidapi-key", _apiConfigs.Key);
             var response = await _httpClient.SendAsync(request);
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
