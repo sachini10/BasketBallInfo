@@ -1,8 +1,8 @@
 # BasketBallInfo
 
 **##features**
--get the basketball-related game details
--get the basketball-related game details by game ID
+- get the basketball-related game details
+- get the basketball-related game details by game ID
 
 
 **##Tech Stack**
@@ -13,14 +13,14 @@
 ### Installation & Setup
 
 ## Prerequisites
-.NET SDK
-SQL server
-API Keys are provided
-Third party API related details added
+- .NET SDK
+- SQL server
+- API Keys are provided
+- Third party API related details added
 
 ## Setup Instructions
-Run the provided SQL script in SQL server
-Provide the correct connection string in appsetting.json
-Set the "BasketBallInfo" API project as startup project
-Run the application
-Check the provided endpoint details by using swagger UI
+- Run the provided SQL script in SQL server
+- Provide the correct connection string in appsetting.json
+- Set the "BasketBallInfo" API project as startup project
+- Run the application
+- Check the provided endpoint details by using swagger UI
